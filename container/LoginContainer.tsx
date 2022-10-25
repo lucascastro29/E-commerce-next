@@ -41,7 +41,6 @@ return (
         position: "absolute",
         top: "0",
         bottom: "76px",
-        backgroundColor: "white",
         width: "100%",
         height: "100%",
         backgroundColor: "#eef1f5",
