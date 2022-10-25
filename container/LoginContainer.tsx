@@ -97,12 +97,19 @@ return (
               type="submit"
               onClick={() => {
                 if (
-                  document.getElementById("password").value != "" &&
-                  document.getElementById("email1").value != ""
+                  (document.getElementById("password") as HTMLInputElement)
+                    .value != "" &&
+                  (document.getElementById("email1") as HTMLInputElement).value != ""
                 ) {
-                  window.location = "/";
-                  setPassUser(document.getElementById("password").value);
-                  setEmailUser(document.getElementById("email1").value);
+                  window.location.href = "/";
+                  setPassUser(
+                    (document.getElementById("password") as HTMLInputElement)
+                      .value
+                  );
+                  setEmailUser(
+                    (document.getElementById("email1") as HTMLInputElement)
+                      .value
+                  );
                 } else {
                   alert(
                     "debes almenos ingresar una contraseña y email validos"
@@ -178,17 +185,20 @@ return (
           variant="primary"
           type="submit"
           onClick={() => {
-            setNameUser(document.getElementById("nameid").value);
-            setEdadUser(document.getElementById("edadid").value),
-              setTelefonoUser(document.getElementById("telefonoid").value);
-            setEmailUser(document.getElementById("emailid").value);
-            setPassUser(document.getElementById("passwordid").value);
+            setNameUser((document.getElementById("nameid") as HTMLInputElement).value);
+            setEdadUser((document.getElementById("edadid") as HTMLInputElement).value),
+              setTelefonoUser((document.getElementById("telefonoid") as HTMLInputElement).value);
+            setEmailUser((document.getElementById("emailid") as HTMLInputElement).value);
+            setPassUser((document.getElementById("passwordid") as HTMLInputElement).value);
             if (
-              document.getElementById("nameid").value != "" &&
-              document.getElementById("emailid").value != "" &&
-              document.getElementById("passwordid").value != ""
+              (document.getElementById("nameid") as HTMLInputElement).value !=
+                "" &&
+              (document.getElementById("emailid") as HTMLInputElement).value !=
+                "" &&
+              (document.getElementById("passwordid") as HTMLInputElement)
+                .value != ""
             ) {
-              window.location = "/";
+              window.location.href = "/";
             } else {
               alert(
                 "debes almenos ingresar una contraseña, email y nombre de usuario para poder ingresar"
