@@ -47,7 +47,7 @@ useEffect(()=>{
        }
 
 if(flag==="mincount"){
-  document.getElementById("rangeFilterCountMin").value = undefined;
+  document.getElementById("rangeFilterCountMin").target = undefined;
       document.getElementById("rangeFilterCountMax").value = undefined;
 }
 
