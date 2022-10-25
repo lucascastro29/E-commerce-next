@@ -185,7 +185,11 @@ useEffect(() => {
                    let date = new Date();
                    comentar({
                      score: scorestarts,
-                     description: document.getElementById("textocoment").value,
+                     description: (
+                       document.getElementById(
+                         "textocoment"
+                       ) as HTMLInputElement
+                     ).value,
                      user: NameUser,
                      dateTime:
                        "" +
@@ -201,7 +205,7 @@ useEffect(() => {
                        ":" +
                        date.getSeconds(),
                    });
-                   document.getElementById("textocoment").value = "";
+                   (document.getElementById("textocoment")as HTMLInputElement).value = "";
                  }}
                >
                  comentar
