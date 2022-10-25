@@ -14,9 +14,9 @@ const VenderContainer = () => {
     setProductsHookInuse,
   
   } = useContext(EcommerceContext);
-const [totalCost, setTotalCost] = useState(0);
+const [totalCost, setTotalCost] = useState<any>(0);
 const[kindOfPublication,setkindOfPublication]=useState("-")
-const [cost,setcost]=useState(0)
+const [cost, setcost] = useState<any>(0);
      const [file, setFile] = useState(null)
 
   useEffect(() => {
@@ -98,7 +98,7 @@ const [cost,setcost]=useState(0)
                     required
                     min="0"
                     onChange={() =>{
-                      setcost(document.getElementById("productCostInput").value)
+                      setcost((document.getElementById("productCostInput") as HTMLInputElement).value)
                       setTotalCost(totalCost)}
                     }
                   />
@@ -272,20 +272,31 @@ const [cost,setcost]=useState(0)
                 className="btn btn-primary btn-lg"
                 onClick={() => {
                   const product = {
-                    name: document.getElementById("productName").value,
+                    name: (
+                      document.getElementById("productName") as HTMLInputElement
+                    ).value,
                     cost: totalCost,
-                    description:
-                      document.getElementById("productDescription").value,
-                    imgSrc:""+document.getElementById("imageid").value,
-                    soldCount:
-                      document.getElementById("productCountInput").value,
+                    description: (
+                      document.getElementById(
+                        "productDescription"
+                      ) as HTMLInputElement
+                    ).value,
+                    imgSrc:
+                      "" +
+                      (document.getElementById("imageid") as HTMLInputElement)
+                        .value,
+                    soldCount: (
+                      document.getElementById(
+                        "productCountInput"
+                      ) as HTMLInputElement
+                    ).value,
                     newobject: "1",
                   };
                   setflag("as");
 
                   if (
                     product.name != "" &&
-                    product.cost != "" &&
+                    product.cost != null &&
                     product.description != "" &&
                     product.imgSrc != "" &&
                     product.soldCount != ""

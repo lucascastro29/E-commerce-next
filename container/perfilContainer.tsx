@@ -229,13 +229,15 @@ setFileimageinuse(fileimage)
               variant="primary"
               type="submit"
               onClick={() => {
-                asd();
-                setNameUser(document.getElementById("nameid").value);
-                setPassUser(document.getElementById("passwordid").value);
+               /* asd();*/
+                setNameUser(
+                  document.getElementById("nameid") as HTMLInputElement
+                ).value;
+                (setPassUser(document.getElementById("passwordid") as HTMLInputElement).value);
 
-                setEdadUser(document.getElementById("edadid").value),
-                  setTelefonoUser(document.getElementById("telefonoid").value);
-                setEmailUser(document.getElementById("emailid").value);
+                (setEdadUser(document.getElementById("edadid") as HTMLInputElement).value),
+                  (setTelefonoUser(document.getElementById("telefonoid") as HTMLInputElement).value);
+                (setEmailUser(document.getElementById("emailid") as HTMLInputElement).value);
               }}
             >
               Submit
