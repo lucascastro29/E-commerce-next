@@ -22,7 +22,7 @@ const [cost, setcost] = useState<any>(0);
   useEffect(() => {
     sethookstart("4");
 
-    console.log(cartItems);
+    console.log(cartItems); 
 
 
 
